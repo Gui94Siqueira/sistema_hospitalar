@@ -23,7 +23,7 @@ class modelCargos
             $descricao_cargo_filter = htmlspecialchars($descricao_cargo, ENT_QUOTES);
 
             $pdo = Database::conexao();
-            $cadastrar = $pdo->prepare("INSERT INTO tbl_cargos (descricao_cargo) VALUES (':descricao_cargo')");
+            $cadastrar = $pdo->prepare("INSERT INTO tbl_cargos (descricao_cargo) VALUES (:descricao_cargo)");
 
             $cadastrar->bindParam(':descricao_cargo', $descricao_cargo_filter);
             $cadastrar->execute();

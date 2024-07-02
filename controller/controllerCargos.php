@@ -11,7 +11,7 @@ class controllerCargos {
         }
     }
 
-    public function CadastrarCargo($descricao_cargo) {
+    public function cadastrarCargo($descricao_cargo) {
         try {
             $modelCargos = new modelCargos();
             return $modelCargos->CadastrarCargo($descricao_cargo);

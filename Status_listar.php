@@ -1,6 +1,6 @@
 <?php
 include_once("services/conexao.php");
-include_once("controller/cotrollerStatus.php");
+include_once("controller/controllerStatus.php");
 include_once("model/modelStatus.php");
 
 $controllerStatus = new controllerStatus();

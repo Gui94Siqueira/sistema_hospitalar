@@ -9,12 +9,12 @@ $data = json_decode(file_get_contents('php://input'), true);
 $descricao_cargo = $data['descricao_cargo'];
 
 $controllerCargos = new controllerCargos();
-$retorno = $controllerCargos->CadastrarCargo($descricao_cargo);
+$retorno = $controllerCargos->cadastrarCargo($descricao_cargo);
 
 if($retorno) {
-    $msg = array("msg" => $retorno);
+    $msg = array("msg" => "Cadastro realizado");
     echo  json_encode($msg);
 } else {
-    $msg = array("msg" => "Erro ao cadastrar paciente.");
+    $msg = array("msg" => "Erro ao cadastrar cargo.");
     echo json_encode($msg);
 }
