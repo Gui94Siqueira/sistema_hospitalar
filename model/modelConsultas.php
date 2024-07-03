@@ -30,7 +30,7 @@
             }
         }
 
-        public function atualizarConsuta($prontuario_id, $funcionario_id, $detalhes, $id_consulta) {
+        public function atualizarConsulta($prontuario_id, $funcionario_id, $detalhes, $id_consulta) {
             try {
                 $pdo = Database::conexao();
                 $cadastrar = $pdo->prepare("UPDATE tbl_consultas SET prontuario_id = :prontuario_id, funcionario_id = :funcionario_id, detalhes = :detalhes WHERE id_consulta = :id_consulta");

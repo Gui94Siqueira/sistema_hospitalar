@@ -33,7 +33,7 @@
                 $atualizar = $pdo->prepare("UPDATE tbl_procedimentos_exame SET id_tipos_procedimento = :id_tipos_procedimento WHERE id_procedimento_exame = :id_procedimento_exame");
 
                 $atualizar->bindParam(':id_tipos_procedimento', $id_tipos_procedimento);
-                $atualizar->bindParam(':id_procedimento_exame', $id_procedimento_exame);
+                $atualizar->bindParam(':id_procedimento_exame', $id_procedimentos_exame);
 
                 $atualizar->execute();
 
