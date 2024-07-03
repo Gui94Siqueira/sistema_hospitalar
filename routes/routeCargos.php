@@ -1,6 +1,8 @@
 <?php
 
 require_once 'controller/controllerCargos.php';
+require_once 'model/modelCargos.php';
+require_once 'services/conexao.php';
 
 class RouteCargos
 {
@@ -38,7 +40,7 @@ class RouteCargos
     public static function cadastrarCargo()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $data = json_decode(file_get_contents("php://input"));
+            $data = json_decode(file_get_contents("php://input"), true);
             $descricao_cargo = $data['descricao_cargo'];
         
             $controllerCargos = new controllerCargos();

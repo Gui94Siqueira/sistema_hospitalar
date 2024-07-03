@@ -1,6 +1,8 @@
 <?php
 
 require_once 'controller/controllerStatus.php';
+require_once 'model/modelStatus.php';
+require_once 'services/conexao.php';
 
 class RouteStatus
 {
@@ -34,7 +36,7 @@ class RouteStatus
     public static function cadastrarStatus()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $data = json_decode(file_get_contents("php://input"));
+            $data = json_decode(file_get_contents("php://input"), true);
             $descricao = $data['descricao'];
         
             $modelStatus = new modelStatus();
