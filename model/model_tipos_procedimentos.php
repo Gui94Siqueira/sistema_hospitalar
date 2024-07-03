@@ -4,7 +4,7 @@ class modelProcedimentos {
     public function listarProcedimentos() {
         try {
             $pdo = Database::conexao();
-            $consulta = $pdo->query("SELECT * FROM tbl_tipos_procedimento");
+            $consulta = $pdo->query("SELECT * FROM tbl_tipos_procedimentos");
             $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
             return $resultado;            
         } catch (PDOException $e) {
@@ -15,7 +15,7 @@ class modelProcedimentos {
     public function cadastarProcedimento($descricao_procedimento) {
         try {
             $pdo = Database::conexao();
-            $cadastrar = $pdo->prepare("INSERT INTO tbl_tipos_procedimento (descricao_procedimento) VALUES (:descricao_procedimento)");
+            $cadastrar = $pdo->prepare("INSERT INTO tbl_tipos_procedimentos (descricao_procedimento) VALUES (:descricao_procedimento)");
             $cadastrar->bindParam(":descricao_procedimento", $descricao_procedimento);
 
             $cadastrar->execute();
@@ -28,7 +28,7 @@ class modelProcedimentos {
     public function atualizarProcedimento($descricao_procedimento, $id_tipos_procedimento) {
         try {
             $pdo = Database::conexao();
-            $atualizar = $pdo->prepare("UPDATE tbl_tipos_procedimento SET descricao_procedimento=:descricao_procedimento WHERE id_tipos_procedimento=:id_tipos_procedimento");
+            $atualizar = $pdo->prepare("UPDATE tbl_tipos_procedimentos SET descricao_procedimento=:descricao_procedimento WHERE id_tipos_procedimento=:id_tipos_procedimento");
             $atualizar->bindParam(":descricao_procedimento", $descricao_procedimento);
             $atualizar->bindParam(":id_tipos_procedimento", $id_tipos_procedimento);
             $atualizar->execute();

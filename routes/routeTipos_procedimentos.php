@@ -1,6 +1,8 @@
 <?php
 
 require_once 'controller/controller_tipos_procedimentos.php';
+require_once 'model/model_tipos_procedimentos.php';
+require_once 'services/conexao.php';
 
 class RouteTipo_Procedimentos
 {
@@ -38,7 +40,7 @@ class RouteTipo_Procedimentos
     public static function cadastrarProcedimento()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $data = json_decode(file_get_contents("php://input"));
+            $data = json_decode(file_get_contents("php://input"), true);
             $descricao_procedimento = $data['descricao_procedimento'];
         
             $modelProcedimentos = new modelProcedimentos();

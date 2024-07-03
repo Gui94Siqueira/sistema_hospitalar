@@ -1,5 +1,5 @@
 <?php
-
+include_once ("model/modelCargos.php");
 class controllerCargos {
 
     public function listarCargos() {

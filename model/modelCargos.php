@@ -12,7 +12,7 @@ class modelCargos
 
             return $retorno;
         } catch (\Throwable $th) {
-            //throw $th;
+            return false;
         }
     }
 

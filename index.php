@@ -24,11 +24,11 @@
             routeProcedimentos_exame::handleRequest($action);
             break;
         
-        case 'tipos_procedimentos':
+        case 'tipos_procedimento':
             routeTipo_procedimentos::handleRequest($action);
             break;
              
-        case 'funcionaios':
+        case 'funcionarios':
             routeFuncionarios::handleRequest($action);
             break;
         

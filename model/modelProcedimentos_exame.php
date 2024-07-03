@@ -4,7 +4,7 @@
         public function listarProcedimentos_exame() {
             try {
                 $pdo =Database::conexao();
-                $listar = $pdo->query("SELECT * FROM tbl_procedimento_exame");
+                $listar = $pdo->query("SELECT * FROM tbl_procedimentos_exame");
 
                 $resultado = $listar->fetchAll(PDO::FETCH_ASSOC);
 

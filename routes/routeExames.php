@@ -1,6 +1,8 @@
 <?php
 
 require_once 'controller/controllerExames.php';
+require_once 'model/modelExames.php';
+require_once 'services/conexao.php';
 
 class RouteExames
 {

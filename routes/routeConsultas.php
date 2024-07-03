@@ -1,6 +1,8 @@
 <?php
 
 require_once 'controller/controllerConsultas.php';
+require_once 'model/modelConsultas.php';
+require_once 'services/conexao.php';
 
 class RouteConsultas
 {

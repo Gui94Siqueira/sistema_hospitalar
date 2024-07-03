@@ -1,6 +1,8 @@
 <?php
 
 require_once 'controller/controllerPacientes.php';
+require_once 'model/modelPacientes.php';
+require_once 'services/conexao.php';
 
 class RoutePacientes
 {
@@ -12,7 +14,7 @@ class RoutePacientes
                 break;
 
             case 'cadastrar':
-                self::cadastraPaciente();
+                self::cadastrarPaciente();
                 break;
 
             default:
@@ -31,10 +33,10 @@ class RoutePacientes
 
 
 
-    public static function cadastraPaciente()
+    public static function cadastrarPaciente()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $data = json_decode(file_get_contents("php://input"));
+            $data = json_decode(file_get_contents("php://input"), true);
             $nome = $data['nome'];
             $sobrenome = $data['sobrenome'];
             $email = $data['email'];

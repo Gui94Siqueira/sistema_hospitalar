@@ -1,6 +1,8 @@
 <?php
 
 require_once 'controller/controllerProcedimentos_exame.php';
+require_once 'model/modelProcedimentos_exame.php';
+require_once 'services/conexao.php';
 
 class RouteProcedimentos_exame
 {
@@ -38,7 +40,7 @@ class RouteProcedimentos_exame
     public static function cadastrarProcedimentos_exame()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $data = json_decode(file_get_contents("php://input"));
+            $data = json_decode(file_get_contents("php://input"), true);
             $id_tipos_procedimento = $data['id_tipos_procedimento'];
         
             $controllerProcedimentos_exame = new controllerProcedimento_exame();
@@ -54,7 +56,7 @@ class RouteProcedimentos_exame
     public static function  updateProcedimento_exame()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $data = json_decode(file_get_contents("php://input"));
+            $data = json_decode(file_get_contents("php://input"), true);
 
             $id_tipos_procedimento = $data['id_tipos_procedimento'];
             $id_procedimentos_exame = $data['id_procedimentos_exame'];

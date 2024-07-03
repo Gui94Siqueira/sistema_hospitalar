@@ -1,6 +1,8 @@
 <?php
 
 require_once 'controller/controllerFuncionarios.php';
+require_once 'model/modelFuncionarios.php';
+require_once 'services/conexao.php';
 
 class RouteFuncionarios
 {
@@ -38,7 +40,7 @@ class RouteFuncionarios
     public static function cadastrarFuncionario()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $data = json_decode(file_get_contents("php://input"));
+            $data = json_decode(file_get_contents("php://input"), true);
             $nome = $data['nome'];
             $sobrenome = $data['sobrenome'];
             $id_status = $data['id_status'];
@@ -57,7 +59,7 @@ class RouteFuncionarios
     public static function updateFuncionario()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $data = json_decode(file_get_contents("php://input"));
+            $data = json_decode(file_get_contents("php://input"), true);
             $nome = $data['nome'];
             $sobrenome = $data['sobrenome'];
             $id_status = $data['id_status'];
